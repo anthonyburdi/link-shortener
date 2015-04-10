@@ -1,0 +1,11 @@
+# Virtualenv
+.Python
+[Bb]in
+[Ii]nclude
+[Ll]ib
+[Ss]cripts
+pyvenv.cfg
+pip-selfcheck.json
+
+# Mac OSX custom attribute files
+.DS_Store

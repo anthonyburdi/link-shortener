@@ -1,0 +1,24 @@
+<!doctype html>
+<title>LnkShrtnr</title>
+<form action="/" method=post>
+  <dl>
+  	<dt>Link to shorten:
+  		<dd><input type=text name=link>
+  		<dd><input type=submit value=Submit>
+  </dl>
+</form>
+<br><br>
+{% if link and shortlink %}
+  {{ link }} shortened to: 
+  <a href="localhost:5001/s/{{ shortlink }}">http://localhost:5001/s/{{shortlink}}</a> 
+  <br>
+{% endif %}
+
+{% if links %}
+  List of entries:<br>
+  {% for key, value in links.iteritems() %}
+  Entry: {{ key }} , {{ value }}<br>
+  {% else %}
+    <em>Unbelievable.  No entries here so far</em>
+  {% endfor %}
+{% endif %}
