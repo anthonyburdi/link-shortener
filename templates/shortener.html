@@ -10,7 +10,7 @@
 <br><br>
 {% if link and shortlink %}
   {{ link }} shortened to: 
-  <a href="localhost:5001/s/{{ shortlink }}">http://localhost:5001/s/{{shortlink}}</a> 
+  <a href="localhost:5001/{{ shortlink }}" target="_blank">http://localhost:5001/{{shortlink}}</a> 
   <br>
 {% endif %}
 
@@ -19,6 +19,6 @@
   {% for key, value in links.iteritems() %}
   Entry: {{ key }} , {{ value }}<br>
   {% else %}
-    <em>Unbelievable.  No entries here so far</em>
+    <em>No entries here so far</em>
   {% endfor %}
 {% endif %}

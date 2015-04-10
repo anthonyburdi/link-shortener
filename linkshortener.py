@@ -16,11 +16,12 @@ def shorten():
 		link = request.form['link'] # receive the entered link
 		shortlink = shortLink(links) # create shortlink
 		links[shortlink] = link # place shortlink into global dict
-		print links
-	return render_template('shortener.html', link=link, 
-		shortlink=shortlink, error=error, links=links)
+		return render_template('shortener.html', link=link, 
+			shortlink=shortlink, error=error, links=links)
+	if request.method == 'GET':
+		return render_template('shortener.html')
 
-@app.route('/s/<shortlink>')
+@app.route('/<shortlink>')
 def reroute(shortlink):
 	"""Redirect from shortlink to original url"""
 	return redirect(links[int(shortlink)], code=302)
