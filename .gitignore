@@ -13,3 +13,6 @@ venv/**
 
 # Vagrant
 /.vagrant
+
+# Environment variables
+env.sh
