@@ -15,4 +15,6 @@ virtualenv venv
 source venv/bin/activate
 pip install -r /vagrant/requirements.txt
 
+python linkshortener.py
+
 echo "cd /vagrant" >> $HOME/.bashrc
