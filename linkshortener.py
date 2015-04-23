@@ -3,8 +3,10 @@ from flask import render_template
 from flask import request
 from flask import redirect
 from random import randint
+import urllib2
 
 app = Flask(__name__)
+my_ip = urllib2.urlopen('http://checkip.amazonaws.com').read().rstrip()
 
 links = {} # Global list of links, in memory. Could be persisted.
 
@@ -17,7 +19,7 @@ def shorten():
 		shortlink = shortLink(links) # create shortlink
 		links[shortlink] = link # place shortlink into global dict
 		return render_template('shortener.html', link=link, 
-			shortlink=shortlink, error=error, links=links)
+			shortlink=shortlink, error=error, links=links, my_ip=my_ip)
 	if request.method == 'GET':
 		return render_template('shortener.html')
 
@@ -39,4 +41,4 @@ def shortLink(links):
 
 if __name__ == '__main__':
 	# app.debug = True
-	app.run(port=5001) # Port 5000 giving errors, shared w Apple
+	app.run(port=5001, host='0.0.0.0') # Port 5000 giving errors, shared w Apple

@@ -10,7 +10,7 @@
 <br><br>
 {% if link and shortlink %}
   {{ link }} shortened to: 
-  <a href="localhost:5001/{{ shortlink }}" target="_blank">http://localhost:5001/{{shortlink}}</a> 
+  <a href="http://{{ my_ip }}:5001/{{ shortlink }}" target="_blank">http://{{ my_ip }}:5001/{{shortlink}}</a> 
   <br>
 {% endif %}
 

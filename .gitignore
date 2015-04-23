@@ -6,6 +6,7 @@
 [Ss]cripts
 pyvenv.cfg
 pip-selfcheck.json
+venv/**
 
 # Mac OSX custom attribute files
 .DS_Store
