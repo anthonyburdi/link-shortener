@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-## Environment Variables
-cat /vagrant/env.sh >> $HOME/.bashrc
-
 ## Update and Install Dependencies
 apt-get update
 apt-get upgrade -y
